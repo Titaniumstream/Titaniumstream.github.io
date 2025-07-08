@@ -338,6 +338,72 @@
     .countdown-btn:hover {
       background: #cc0000;
     }
+
+    @media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .header-left,
+  .header-right {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .site-header h1 {
+    font-size: 2rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .header-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .banner h2 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .event-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .event-block img {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .event-details h3 {
+    font-size: 1.5rem;
+  }
+
+  .countdown-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .countdown-content p {
+    font-size: 1rem;
+  }
+
+  .countdown-boxes {
+    flex-wrap: wrap;
+  }
+}
+
   </style>
 </head>
 <body>
