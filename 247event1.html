@@ -269,28 +269,37 @@
     flex-wrap: wrap;
   }
 
-  /* Keep stream-container flex row (same as PC) */
+  /* Stream and chat layout fix */
   .main-content {
-    padding-top: 80px; /* keep space for fixed header */
+    padding-top: 12rem; /* makes room for fixed header */
     overflow: hidden;
   }
 
   .stream-container {
-    flex-direction: row;
+    flex-direction: column;
     gap: 12px;
     padding: 0 12px 12px;
     align-items: stretch;
   }
 
-  .stream-box {
-    flex: 2.5;
-    height: calc(100vh - 92px);
+  .stream-box,
+  .chat-box {
+    flex: none;
+    height: auto;
   }
 
-  .chat-box {
-    flex: 1;
-    height: calc(100vh - 100px);
-    margin-top: 8px;
+  /* Responsive stream iframe (16:9 aspect ratio) */
+  .stream-box iframe {
+    width: 100%;
+    height: calc(100vw * 9 / 16); /* adjusts height based on viewport width */
+    display: block;
+  }
+
+  /* Chat box iframe or content */
+  .chat-box iframe {
+    width: 100%;
+    height: 400px; /* adjust this height as needed */
+    display: block;
   }
 }
 

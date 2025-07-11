@@ -172,7 +172,7 @@
       color: #aaa;
     }
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
   .site-header {
     flex-direction: column;
     height: auto;
@@ -234,6 +234,33 @@
 
   .countdown-boxes {
     flex-wrap: wrap;
+  }
+
+  /* New responsive styles for content grid and boxes */
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .box img {
+    height: 120px;
+  }
+
+  .box-content {
+    padding: 0.75rem;
+  }
+
+  .box-title {
+    font-size: 0.95rem;
+  }
+
+  .box-meta {
+    font-size: 0.8rem;
+  }
+
+  /* Adjust top padding so boxes are not hidden behind header */
+  .content-wrapper {
+    padding-top: 10rem;
   }
 }
 
