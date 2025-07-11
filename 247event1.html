@@ -271,7 +271,7 @@
 
   /* Stream and chat layout fix */
   .main-content {
-    padding-top: 12rem; /* makes room for fixed header */
+    padding-top: 12rem; /* adjust based on header height */
     overflow: hidden;
   }
 
@@ -285,23 +285,25 @@
   .stream-box,
   .chat-box {
     flex: none;
+    width: 100%;
     height: auto;
   }
 
   /* Responsive stream iframe (16:9 aspect ratio) */
   .stream-box iframe {
     width: 100%;
-    height: calc(100vw * 9 / 16); /* adjusts height based on viewport width */
+    height: calc(100vw * 9 / 16);
     display: block;
   }
 
-  /* Chat box iframe or content */
+  /* Chat box iframe or content - remove fixed height */
   .chat-box iframe {
     width: 100%;
-    height: 400px; /* adjust this height as needed */
+    height: auto;
     display: block;
   }
 }
+
 
   </style>
 </head>
