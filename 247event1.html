@@ -269,9 +269,8 @@
     flex-wrap: wrap;
   }
 
-  /* Stream and chat layout fix */
   .main-content {
-    padding-top: 12rem; /* adjust based on your fixed header height */
+    padding-top: 12rem;
     overflow: hidden;
   }
 
@@ -289,19 +288,21 @@
     height: auto;
   }
 
-  /* Responsive stream iframe (16:9 aspect ratio) */
   .stream-box iframe {
     width: 100%;
-    height: calc(100vw * 9 / 16); /* responsive video height */
+    height: calc(100vw * 9 / 16);
     display: block;
   }
 
-  /* Chatango chat box responsive height */
   .chat-box iframe {
     width: 100%;
-    min-height: 400px; /* Chatango needs at least 400px height */
+    min-height: 400px;
     height: auto;
     display: block;
+  }
+
+  .chat-box {
+    margin-bottom: 4rem; /* extra space below for scrolling */
   }
 }
 

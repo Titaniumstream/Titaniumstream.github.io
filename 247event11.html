@@ -269,30 +269,43 @@
     flex-wrap: wrap;
   }
 
-  /* Keep stream-container flex row (same as PC) */
   .main-content {
-    padding-top: 80px; /* keep space for fixed header */
+    padding-top: 12rem;
     overflow: hidden;
   }
 
   .stream-container {
-    flex-direction: row;
+    flex-direction: column;
     gap: 12px;
     padding: 0 12px 12px;
     align-items: stretch;
   }
 
-  .stream-box {
-    flex: 2.5;
-    height: calc(100vh - 92px);
+  .stream-box,
+  .chat-box {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .stream-box iframe {
+    width: 100%;
+    height: calc(100vw * 9 / 16);
+    display: block;
+  }
+
+  .chat-box iframe {
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+    display: block;
   }
 
   .chat-box {
-    flex: 1;
-    height: calc(100vh - 100px);
-    margin-top: 8px;
+    margin-bottom: 4rem; /* extra space below for scrolling */
   }
 }
+
 
   </style>
 </head>
