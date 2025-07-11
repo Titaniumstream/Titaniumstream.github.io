@@ -271,7 +271,7 @@
 
   /* Stream and chat layout fix */
   .main-content {
-    padding-top: 12rem; /* adjust based on header height */
+    padding-top: 12rem; /* adjust based on your fixed header height */
     overflow: hidden;
   }
 
@@ -292,18 +292,18 @@
   /* Responsive stream iframe (16:9 aspect ratio) */
   .stream-box iframe {
     width: 100%;
-    height: calc(100vw * 9 / 16);
+    height: calc(100vw * 9 / 16); /* responsive video height */
     display: block;
   }
 
-  /* Chat box iframe or content - remove fixed height */
+  /* Chatango chat box responsive height */
   .chat-box iframe {
     width: 100%;
+    min-height: 400px; /* Chatango needs at least 400px height */
     height: auto;
     display: block;
   }
 }
-
 
   </style>
 </head>
