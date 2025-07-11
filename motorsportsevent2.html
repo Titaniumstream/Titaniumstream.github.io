@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Event 1 - Titanium Darts</title>
+  <title>Sky Sports F1 - Titanium Darts</title>
   <style>
     * {
       box-sizing: border-box;
@@ -14,14 +14,15 @@
       display: none;
     }
 
+    /* === UPDATED: Removed overflow:hidden and height:100% here to enable scrolling === */
     html, body {
       font-family: Arial, sans-serif;
       background: #000;
       color: #fff;
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      height: 100%;
+      overflow-x: hidden; /* prevent horizontal scroll but allow vertical scroll */
+      height: auto;       /* allow natural height for scrolling */
     }
 
     .site-header {
@@ -115,12 +116,13 @@
       color: #fff;
     }
 
+    /* === UPDATED: Changed height to min-height and overflow visible to allow scrolling === */
     .main-content {
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      min-height: 100vh;
       padding-top: 80px;
-      overflow: hidden;
+      overflow: visible;
     }
 
     .stream-container {
@@ -205,108 +207,112 @@
       border: none;
     }
 
-@media (max-width: 768px) {
-  .site-header {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem;
-  }
+    /* MOBILE MEDIA QUERY */
+    @media (max-width: 768px) {
+      .site-header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+      }
 
-  .header-left,
-  .header-right {
-    position: static;
-    transform: none;
-    justify-content: center;
-    margin-top: 0.5rem;
-    flex-wrap: wrap;
-  }
+      .header-left,
+      .header-right {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+      }
 
-  .site-header h1 {
-    font-size: 2rem;
-    margin-left: 0;
-    text-align: center;
-  }
+      .site-header h1 {
+        font-size: 2rem;
+        margin-left: 0;
+        text-align: center;
+      }
 
-  .header-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
+      .header-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
 
-  .banner h2 {
-    font-size: 2rem;
-    padding: 0 1rem;
-  }
+      .banner h2 {
+        font-size: 2rem;
+        padding: 0 1rem;
+      }
 
-  .banner p {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
+      .banner p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
 
-  .event-block {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+      .event-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
 
-  .event-block img {
-    width: 90%;
-    max-width: 400px;
-  }
+      .event-block img {
+        width: 90%;
+        max-width: 400px;
+      }
 
-  .event-details h3 {
-    font-size: 1.5rem;
-  }
+      .event-details h3 {
+        font-size: 1.5rem;
+      }
 
-  .countdown-content h2 {
-    font-size: 1.8rem;
-  }
+      .countdown-content h2 {
+        font-size: 1.8rem;
+      }
 
-  .countdown-content p {
-    font-size: 1rem;
-  }
+      .countdown-content p {
+        font-size: 1rem;
+      }
 
-  .countdown-boxes {
-    flex-wrap: wrap;
-  }
+      .countdown-boxes {
+        flex-wrap: wrap;
+      }
 
-  .main-content {
-    padding-top: 12rem;
-    overflow: hidden;
-  }
+      /* Allow page vertical scrolling and make chat below stream */
+      .main-content {
+        padding-top: 12rem;
+        overflow: visible;
+      }
 
-  .stream-container {
-    flex-direction: column;
-    gap: 12px;
-    padding: 0 12px 12px;
-    align-items: stretch;
-  }
+      .stream-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 12px 12px;
+        align-items: stretch;
+      }
 
-  .stream-box,
-  .chat-box {
-    flex: none;
-    width: 100%;
-    height: auto;
-  }
+      .stream-box,
+      .chat-box {
+        flex: none;
+        width: 100%;
+        height: auto;
+      }
 
-  .stream-box iframe {
-    width: 100%;
-    height: calc(100vw * 9 / 16);
-    display: block;
-  }
+      .stream-box iframe {
+        width: 100%;
+        height: calc(100vw * 9 / 16);
+        display: block;
+      }
 
-  .chat-box iframe {
-    width: 100%;
-    min-height: 400px;
-    height: auto;
-    display: block;
-  }
+      .chat-box {
+        width: 100%;
+        min-height: 400px;
+        height: auto;
+        overflow: visible;
+        margin-bottom: 150px; /* increased bottom margin to allow scrolling fully to bottom */
+      }
 
-  .chat-box {
-    margin-bottom: 4rem; /* extra space below for scrolling */
-  }
-}
-
-
+      .chat-box iframe {
+        width: 100%;
+        min-height: 400px;
+        height: auto;
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -323,14 +329,13 @@
       <a class="header-button" href="other.html">Other</a>
       <a class="header-button" href="247page.html">24/7 TV</a>
     </div>
-
   </header>
 
   <div class="main-content">
     <div class="stream-container">
       <div class="stream-box">
-        <iframe src="https://veplay.top/stream/861c9f75-251a-47f9-889c-4d2b864669aa" allowfullscreen></iframe>
-        <div class="stream-caption">PDC: Players Championship 20 - Board 4</div>
+        <iframe src="https://embedstreams.top/embed/alpha/sky-sports-f1-sky-f1/1" allowfullscreen></iframe>
+        <div class="stream-caption">Sky Sports F1</div>
         <a class="click-layer left" id="clickLeft" href="https://otieu.com/4/9541429" target="_blank"></a>
         <a class="click-layer right" id="clickRight" href="https://otieu.com/4/9541434" target="_blank"></a>
       </div>
